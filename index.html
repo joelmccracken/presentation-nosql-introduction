@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title></title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+      document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+       <style>
+         * {
+         text-transform: none !important;
+         }
+       </style>
+
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <h1>An</h1>
+          <h1>Introduction</h1>
+          <h1>to NoSQL</h1>
+          <h3>Alternative ways to think about databases</h3>
+          <p>
+            <small>Created by <a href="http://twitter.com/JoelMcCracken">@JoelMcCracken</a></small>
+          </p>
+        </section>
+
+        <section>
+          <h2>Goals</h2>
+          <ul>
+            <li>What is NoSQL?</li>
+            <li>Why should we care about it?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>What's in a name?</h2>
+
+          (query-replace-regexp "<p>\\(.*\\)</p>" "<li>\\1</li>")
+
+          <p>"Anything not SQL or a Relational Database"</p>
+          <p>(It is a terrible name)</p>
+        </section>
+
+        <section>
+          <h2>SQL Success</h2>
+          <p>Incredibly powerful and successful</p>
+          <p>De facto standard for databases</p>
+        </section>
+
+        <section>
+          <h2>The Relational Model</h2>
+          <p>Organize all the data into tables</p>
+          <p>Data references other data with keys</p>
+        </section>
+
+        <section>
+          <h2>Weaknesses</h2>
+          <p>Speed/Scalability</p>
+          <p>A table may be unnatural</p>
+          <p>Single point of authority</p>
+        </section>
+
+        <section>
+          <h2>NoSQL</h2>
+        </section>
+
+        <section>
+          <h2>Key/Value</h2>
+
+          <ul>
+            <li>Values cannot be queried against</li>
+            <li>Very simple and fast</li>
+            <li>(not popular, but one of the oldest)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Document</h2>
+          <ul>
+            <li>Data stored in documents</li>
+            <li>Data have a format that the database uses to answer
+              questions</li>
+            <li>Supports queries that are similar to SQL</li>
+            <li>Fewer guarantees means less work</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Document Database: Example</h2>
+          <p>A web application that aggregates all messages its users receive:</p>
+          <ul>
+            <li>Messages of different types: Texts, Emails, Facebook, Twitter.</li>
+            <li>Massive amounts of data.</li>
+          </ul>
+        </section>
+
+
+        <section>
+          <h2>Data Structure</h2>
+          <p>Data storage with specific guarantees</p>
+          <p style="margin-left: -6em;">Types:</p>
+          <ul>
+            <li>Lists</li>
+            <li>Sets</li>
+            <li>Sorted Sets</li>
+            <li>Hashes</li>
+          </ul>
+          <p>Choice appropriate for individual data</p>
+        </section>
+
+        <section>
+          <h2>Data Structure Database: Example</h2>
+          <p>A platform for analyzing the visitors to your website:</p>
+          <ul>
+            <li>List: every visit to site</li>
+            <li>Set: every address to have visited your site</li>
+            <li>Sorted Set: Same as above, but sorted by time visited</li>
+            <li>Hash: the full history of every visitor to your site,
+              organized by visitor address</li>
+          </ul>
+        </section>
+
+
+
+        <section>
+          <h2>Graph Databases</h2>
+          <p>Data represented as:</p>
+          <ul>
+            <li>Nodes: Discrete points of data</li>
+            <li>Edges: The connections between nodes</li>
+          </ul>
+          <p>Data may be kept about both nodes and edges</p>
+          <p>Ideal for data where the relationships between </p>
+          <p>Ideal for data where the relationships between data are just as</p>
+          <p>important as the data points themselves</p>
+
+        </section>
+
+        <section>
+          <h2>Graph Databases: Examples</h2>
+          <ul>
+            <li>Facebook &amp; social data</li>
+            <li>Recommendation engines</li>
+            <li>Mapping software</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>End</h2>
+          <h2>Questions?</h2>
+          <a href="http://twitter.com/JoelMcCracken">@JoelMcCracken</a>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+
+      theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+      transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+      // Optional libraries used to extend on reveal.js
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+      ]
+      });
+
+    </script>
+
+  </body>
+</html>
